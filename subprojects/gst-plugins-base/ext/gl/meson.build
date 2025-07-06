@@ -43,7 +43,8 @@ opengl_sources = [
   'gltestsrc.c',
   'gstgltestsrc.c',
   'gstgloverlaycompositorelement.c',
-  'gstglutils.c'
+  'gstglutils.c',
+  'gstglredaction.cpp'
 ]
 
 opengl_headers = [
@@ -82,6 +83,7 @@ opengl_headers = [
   'gstglsinkbin.h',
   'gstglsrcbin.h',
   'gstglvideoflip.h',
+  'gstglredaction.hh'
 ]
 
 doc_sources = []

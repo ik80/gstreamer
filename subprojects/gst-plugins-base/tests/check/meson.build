@@ -99,7 +99,7 @@ if build_gstgl and host_machine.system() != 'windows'
     [ 'libs/gstglmatrix.c', not build_gstgl, [gstgl_dep]],
     [ 'libs/gstglmemory.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],
     [ 'libs/gstglquery.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],
-    [ 'libs/gstglshader.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],
+    [ 'libs/gstglshader.cpp', not build_gstgl, [gstgl_dep, gstglproto_dep]],
     [ 'libs/gstglsl.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],
     [ 'libs/gstglslstage.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],
     [ 'libs/gstglupload.c', not build_gstgl, [gstgl_dep, gstglproto_dep]],

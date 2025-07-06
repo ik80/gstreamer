@@ -6175,6 +6175,147 @@
                 },
                 "rank": "none"
             },
+            "glredaction": {
+                "author": "Filippo Argiolas <filippo.argiolas@gmail.com>, Matthew Waters <matthew@centricular.com>",
+                "description": "Redaction GL video texture with a JPEG/PNG image",
+                "hierarchy": [
+                    "GstGLRedaction",
+                    "GstGLFilter",
+                    "GstGLBaseFilter",
+                    "GstBaseTransform",
+                    "GstElement",
+                    "GstObject",
+                    "GInitiallyUnowned",
+                    "GObject"
+                ],
+                "klass": "Filter/Effect/Video",
+                "long-name": "Gstreamer OpenGL Redaction",
+                "pad-templates": {
+                    "sink": {
+                        "caps": "video/x-raw(ANY):\n         format: RGBA\n          width: [ 1, 2147483647 ]\n         height: [ 1, 2147483647 ]\n      framerate: [ 0/1, 2147483647/1 ]\n texture-target: 2D\n\nvideo/x-raw(memory:GLMemory):\n         format: RGBA\n          width: [ 1, 2147483647 ]\n         height: [ 1, 2147483647 ]\n      framerate: [ 0/1, 2147483647/1 ]\n texture-target: 2D\n",
+                        "direction": "sink",
+                        "presence": "always"
+                    },
+                    "src": {
+                        "caps": "video/x-raw(memory:GLMemory):\n         format: RGBA\n          width: [ 1, 2147483647 ]\n         height: [ 1, 2147483647 ]\n      framerate: [ 0/1, 2147483647/1 ]\n texture-target: 2D\n\nvideo/x-raw(ANY):\n         format: RGBA\n          width: [ 1, 2147483647 ]\n         height: [ 1, 2147483647 ]\n      framerate: [ 0/1, 2147483647/1 ]\n texture-target: 2D\n",
+                        "direction": "src",
+                        "presence": "always"
+                    }
+                },
+                "properties": {
+                    "alpha": {
+                        "blurb": "Global alpha of overlay image",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "1",
+                        "max": "1",
+                        "min": "0",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gdouble",
+                        "writable": true
+                    },
+                    "location": {
+                        "blurb": "Location of image file to overlay",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "NULL",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gchararray",
+                        "writable": true
+                    },
+                    "offset-x": {
+                        "blurb": "For positive value, horizontal offset of overlay image in pixels from left of video image. For negative value, horizontal offset of overlay image in pixels from right of video image",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "2147483647",
+                        "min": "-2147483648",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gint",
+                        "writable": true
+                    },
+                    "offset-y": {
+                        "blurb": "For positive value, vertical offset of overlay image in pixels from top of video image. For negative value, vertical offset of overlay image in pixels from bottom of video image",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "2147483647",
+                        "min": "-2147483648",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gint",
+                        "writable": true
+                    },
+                    "overlay-height": {
+                        "blurb": "Height of overlay image in pixels (0 = same as overlay image)",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "2147483647",
+                        "min": "0",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gint",
+                        "writable": true
+                    },
+                    "overlay-width": {
+                        "blurb": "Width of overlay image in pixels (0 = same as overlay image)",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "2147483647",
+                        "min": "0",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gint",
+                        "writable": true
+                    },
+                    "relative-x": {
+                        "blurb": "Horizontal offset of overlay image in fractions of video image width, from top-left corner of video image",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "1",
+                        "min": "0",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gdouble",
+                        "writable": true
+                    },
+                    "relative-y": {
+                        "blurb": "Vertical offset of overlay image in fractions of video image height, from top-left corner of video image",
+                        "conditionally-available": false,
+                        "construct": false,
+                        "construct-only": false,
+                        "controllable": true,
+                        "default": "0",
+                        "max": "1",
+                        "min": "0",
+                        "mutable": "playing",
+                        "readable": true,
+                        "type": "gdouble",
+                        "writable": true
+                    }
+                },
+                "rank": "none"
+            },
             "gloverlaycompositor": {
                 "author": "<matthew@centricular.com>",
                 "description": "Flatten a stream containing GstVideoOverlayCompositionMeta",
